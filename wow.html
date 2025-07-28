@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women on Wheels Pakistan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+  /* Custom styles for fonts and colors */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #000000; /* Black for body text */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700; /* Bold */
+        }
+        .text-wow-pink {
+            color: #ec008c;
+        }
+        .bg-wow-pink {
+            background-color: #ec008c;
+        }
+        .border-wow-pink {
+            border-color: #ec008c;
+        }
+        .hover-wow-pink:hover {
+            color: #ec008c;
+        }
+        .bg-light-gray {
+            background-color: #f5f5f5; /* Light gray accent */
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fixed Animation Classes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animation-delay-500 {
+            animation-delay: 0.5s;
+        }
+
+        .animation-delay-1000 {
+            animation-delay: 1s;
+        }
+
+        /* Initially hide elements that will animate */
+        .animate-fade-in-up {
+            opacity: 0;
+        }
+
+        /* Custom carousel styling for success stories */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+        }
+        .carousel-button-left {
+            left: 10px;
+        }
+        .carousel-button-right {
+            right: 10px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header & Navigation -->
+    <header class="bg-black text-white py-4 shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- WOW Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <!-- Updated placeholder to reflect pink and black branding -->
+                <img src="wow.png" alt="WOW Logo" class="h-10 rounded">
+                <!-- <span class="text-2xl font-bold text-wow-pink">WOW</span> -->
+            </a>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#hero" class="hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Home</a>
+                <a href="#mission" class="hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Mission</a>
+                <a href="#programs" class="hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Programs</a>
+                <a href="#stories" class="hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Success Stories</a>
+                <a href="#events" class="hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Events</a>
+                <a href="#join" class="hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Join Us</a>
+                <a href="#gallery" class="hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Gallery</a>
+                <a href="#blog" class="hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Blog</a>
+                <a href="#partners" class="hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Partners</a>
+                <a href="#contact" class="hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black py-2">
+            <nav class="flex flex-col items-center space-y-2">
+                <a href="#hero" class="block text-white hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Home</a>
+                <a href="#mission" class="block text-white hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Mission</a>
+                <a href="#programs" class="block text-white hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Programs</a>
+                <a href="#stories" class="block text-white hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Success Stories</a>
+                <a href="#events" class="block text-white hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Events</a>
+                <a href="#join" class="block text-white hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Join Us</a>
+                <a href="#gallery" class="block text-white hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Gallery</a>
+                <a href="#blog" class="block text-white hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Blog</a>
+                <a href="#partners" class="block text-white hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Partners</a>
+                <a href="#contact" class="block text-white hover:text-wow-pink transition duration-300 rounded-md px-3 py-2">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen bg-cover bg-center" style="background-image: url('hero.png');">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg animate-fade-in-up">Empowering Pakistani Women Through Mobility</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl opacity-0 animate-fade-in-up animation-delay-500">Join us in a movement that champions independence, confidence, and social inclusion for women across Pakistan.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 opacity-0 animate-fade-in-up animation-delay-1000">
+                    <a href="#join" class="bg-wow-pink text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 shadow-lg transform hover:scale-105">Join Now</a>
+                    <a href="#mission" class="bg-white text-wow-pink px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300 shadow-lg transform hover:scale-105">See How It Works</a>
+                    <!-- Changed "Donate" button to have a black background and white text for better visibility -->
+                    <a href="#partners" class="bg-black text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-wow-pink hover:text-white transition duration-300 shadow-lg transform hover:scale-105">Donate</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Statement -->
+        <section id="mission" class="py-16 bg-light-gray px-4">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl text-black mb-8">Our Mission & Impact</h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12">Women on Wheels Pakistan is dedicated to empowering women by providing comprehensive mobility training, fostering independence, and promoting their active participation in society. We believe that mobility is a key to unlocking opportunities and breaking barriers.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
+                        <svg class="w-16 h-16 text-wow-pink mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-2">10,000+</h3>
+                        <p class="text-gray-600">Women Trained</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
+                        <svg class="w-16 h-16 text-wow-pink mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.592 1M12 8c-1.11 0-2.08-.402-2.592-1m2.592-1V3m0 8v3m0 3.01V21M12 21c-1.657 0-3-.895-3-2s1.343-2 3-2 3-.895 3-2-1.343-2-3-2H3"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-2">20+</h3>
+                        <p class="text-gray-600">Cities Reached</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
+                        <svg class="w-16 h-16 text-wow-pink mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-2xl font-semibold mb-2">100%</h3>
+                        <p class="text-gray-600">Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Programs -->
+        <section id="programs" class="py-16 px-4">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl text-black mb-12">Our Training Programs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Program Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center border-t-4 border-wow-pink hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-wow-pink mb-4">Motorbike Riding</h3>
+                        <p class="text-gray-700 mb-4 text-center">Comprehensive training from basic handling to road safety and traffic rules.</p>
+                        <ul class="text-left w-full mb-6 text-gray-600">
+                            <li class="flex items-center mb-2"><svg class="w-5 h-5 mr-2 text-wow-pink" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Duration: 4 Weeks</li>
+                            <li class="flex items-center mb-2"><svg class="w-5 h-5 mr-2 text-wow-pink" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Eligibility: 18+ years, Valid ID</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-wow-pink" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Locations: Lahore, Karachi, Islamabad</li>
+                        </ul>
+                        <a href="#join" class="bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-wow-pink transition duration-300 shadow-md">Enroll Now</a>
+                    </div>
+                    <!-- Program Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center border-t-4 border-wow-pink hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-wow-pink mb-4">Scooty Riding</h3>
+                        <p class="text-gray-700 mb-4 text-center">Specialized training for scooty users, focusing on urban mobility and safety.</p>
+                        <ul class="text-left w-full mb-6 text-gray-600">
+                            <li class="flex items-center mb-2"><svg class="w-5 h-5 mr-2 text-wow-pink" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Duration: 3 Weeks</li>
+                            <li class="flex items-center mb-2"><svg class="w-5 h-5 mr-2 text-wow-pink" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Eligibility: 16+ years</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-wow-pink" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Locations: Rawalpindi, Peshawar, Multan</li>
+                        </ul>
+                        <a href="#join" class="bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-wow-pink transition duration-300 shadow-md">Enroll Now</a>
+                    </div>
+                    <!-- Program Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center border-t-4 border-wow-pink hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-wow-pink mb-4">Advanced Road Safety</h3>
+                        <p class="text-gray-700 mb-4 text-center">Advanced course for experienced riders, covering defensive driving and emergency maneuvers.</p>
+                        <ul class="text-left w-full mb-6 text-gray-600">
+                            <li class="flex items-center mb-2"><svg class="w-5 h-5 mr-2 text-wow-pink" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Duration: 2 Weeks</li>
+                            <li class="flex items-center mb-2"><svg class="w-5 h-5 mr-2 text-wow-pink" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Eligibility: Licensed Riders</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-wow-pink" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Locations: All major cities</li>
+                        </ul>
+                        <a href="#join" class="bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-wow-pink transition duration-300 shadow-md">Enroll Now</a>
+                    </div>
+                </div>
+                <a href="#join" class="mt-12 inline-block bg-wow-pink text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 shadow-lg">Enroll in a Program</a>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
+        <section id="stories" class="py-16 bg-light-gray px-4">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl text-black mb-12">Success Stories</h2>
+                <div class="carousel-container relative w-full max-w-4xl mx-auto">
+                    <div class="carousel-track">
+                        <!-- Story 1 -->
+                        <div class="carousel-item p-6 bg-white rounded-lg shadow-lg flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                            <img src="https://placehold.co/150x150/ec008c/ffffff?text=Sara" alt="Sara's Photo" class="w-36 h-36 rounded-full object-cover shadow-md">
+                            <div class="text-center md:text-left">
+                                <p class="text-lg italic text-gray-700 mb-4">"Learning to ride a motorbike with WOW has transformed my life. I can now commute to work independently and feel truly empowered!"</p>
+                                <p class="font-semibold text-wow-pink">- Sara Khan, Lahore</p>
+                            </div>
+                        </div>
+                        <!-- Story 2 -->
+                        <div class="carousel-item p-6 bg-white rounded-lg shadow-lg flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                            <img src="https://placehold.co/150x150/ec008c/ffffff?text=Aisha" alt="Aisha's Photo" class="w-36 h-36 rounded-full object-cover shadow-md">
+                            <div class="text-center md:text-left">
+                                <p class="text-lg italic text-gray-700 mb-4">"WOW provided me with the skills and confidence I needed. I'm now a proud independent rider, inspiring other women in my community."</p>
+                                <p class="font-semibold text-wow-pink">- Aisha Malik, Karachi</p>
+                            </div>
+                        </div>
+                        <!-- Story 3 -->
+                        <div class="carousel-item p-6 bg-white rounded-lg shadow-lg flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                            <img src="https://placehold.co/150x150/ec008c/ffffff?text=Fatima" alt="Fatima's Photo" class="w-36 h-36 rounded-full object-cover shadow-md">
+                            <div class="text-center md:text-left">
+                                <p class="text-lg italic text-gray-700 mb-4">"The trainers at WOW are amazing! They made learning fun and safe. I highly recommend their programs to every woman."</p>
+                                <p class="font-semibold text-wow-pink">- Fatima Ali, Islamabad</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-button carousel-button-left" onclick="moveCarousel(-1)">&#10094;</button>
+                    <button class="carousel-button carousel-button-right" onclick="moveCarousel(1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events & Locations -->
+        <section id="events" class="py-16 px-4">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl text-black mb-12">Upcoming Events & Locations</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Event Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-wow-pink hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-wow-pink mb-2">Lahore Training Camp</h3>
+                        <p class="text-gray-700 mb-4">Join our intensive motorbike training camp in Lahore.</p>
+                        <ul class="text-left text-gray-600">
+                            <li class="flex items-center mb-2"><svg class="w-5 h-5 mr-2 text-black" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg> Date: August 15-30, 2025</li>
+                            <li class="flex items-center mb-2"><svg class="w-5 h-5 mr-2 text-black" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg> Location: Model Town Park, Lahore</li>
+                        </ul>
+                        <a href="#join" class="mt-6 inline-block bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-wow-pink transition duration-300 shadow-md">Register for Event</a>
+                    </div>
+                    <!-- Event Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-wow-pink hover:shadow-xl transition duration-300">
+                        <h3 class="text-2xl font-semibold text-wow-pink mb-2">Karachi Community Ride</h3>
+                        <p class="text-gray-700 mb-4">A fun community ride for all WOW graduates in Karachi.</p>
+                        <ul class="text-left text-gray-600">
+                            <li class="flex items-center mb-2"><svg class="w-5 h-5 mr-2 text-black" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg> Date: September 10, 2025</li>
+                            <li class="flex items-center mb-2"><svg class="w-5 h-5 mr-2 text-black" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg> Location: Sea View, Karachi</li>
+                        </ul>
+                        <a href="#join" class="mt-6 inline-block bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-wow-pink transition duration-300 shadow-md">Join the Ride</a>
+                    </div>
+                </div>
+                <!-- Interactive Map Placeholder -->
+                <p><a href="https://www.google.com/maps/place/Driving+License+Sindh+DLS+SAUDABAD+Branch/@24.88581,67.1807474,17z/data=!3m1!4b1!4m6!3m5!1s0x3eb3390057bb244d:0x5c57c7aec8c97353!8m2!3d24.88581!4d67.1833277!16s%2Fg%2F11w3n9gx44?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-wow-pink hover:underline font-semibold">View Our Training Locations on Google Maps</a></p>
+            </div>
+        </section>
+
+        <!-- Registration / Join Us -->
+        <section id="join" class="py-16 bg-light-gray px-4">
+            <div class="container mx-auto text-center max-w-2xl">
+                <h2 class="text-3xl md:text-4xl text-black mb-12">Join Our Movement</h2>
+                <p class="text-lg text-gray-700 mb-8">Fill out the form below to register for a program or volunteer with Women on Wheels Pakistan.</p>
+                <form class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="mb-6 text-left">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-wow-pink" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="mb-6 text-left">
+                        <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-wow-pink" placeholder="e.g., +92 3XX XXXXXXX" required>
+                    </div>
+                    <div class="mb-6 text-left">
+                        <label for="city" class="block text-gray-700 text-sm font-bold mb-2">City</label>
+                        <input type="text" id="city" name="city" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-wow-pink" placeholder="Your City" required>
+                    </div>
+                    <div class="mb-6 text-left">
+                        <label for="program" class="block text-gray-700 text-sm font-bold mb-2">Program of Interest</label>
+                        <select id="program" name="program" class="shadow border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-wow-pink">
+                            <option value="">Select a Program</option>
+                            <option value="motorbike">Motorbike Riding</option>
+                            <option value="scooty">Scooty Riding</option>
+                            <option value="advanced">Advanced Road Safety</option>
+                            <option value="volunteer">Volunteer</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="bg-wow-pink text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 shadow-lg w-full">Submit Application</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Media Gallery -->
+        <section id="gallery" class="py-16 px-4">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl text-black mb-12">Media Gallery</h2>
+                <div class="flex justify-center mb-8 space-x-4">
+                    <button class="bg-black text-white px-6 py-2 rounded-full hover:bg-wow-pink transition duration-300">All</button>
+                    <button class="bg-gray-200 text-black px-6 py-2 rounded-full hover:bg-wow-pink hover:text-white transition duration-300">Lahore</button>
+                    <button class="bg-gray-200 text-black px-6 py-2 rounded-full hover:bg-wow-pink hover:text-white transition duration-300">Karachi</button>
+                    <button class="bg-gray-200 text-black px-6 py-2 rounded-full hover:bg-wow-pink hover:text-white transition duration-300">Islamabad</button>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Gallery Item 1 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/400x300/ec008c/ffffff?text=Gallery+Image+1" alt="Gallery Image 1" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white text-lg font-semibold">Lahore Training</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 2 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/400x300/000000/ffffff?text=Gallery+Image+2" alt="Gallery Image 2" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white text-lg font-semibold">Karachi Ride</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 3 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/400x300/ec008c/ffffff?text=Gallery+Image+3" alt="Gallery Image 3" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white text-lg font-semibold">Islamabad Workshop</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 4 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/400x300/000000/ffffff?text=Gallery+Image+4" alt="Gallery Image 4" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white text-lg font-semibold">Graduation Ceremony</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 5 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/400x300/ec008c/ffffff?text=Gallery+Image+5" alt="Gallery Image 5" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white text-lg font-semibold">Community Outreach</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 6 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/400x300/000000/ffffff?text=Gallery+Image+6" alt="Gallery Image 6" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white text-lg font-semibold">Safety Workshop</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 7 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/400x300/ec008c/ffffff?text=Gallery+Image+7" alt="Gallery Image 7" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white text-lg font-semibold">New Riders</p>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 8 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md">
+                        <img src="https://placehold.co/400x300/000000/ffffff?text=Gallery+Image+8" alt="Gallery Image 8" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <p class="text-white text-lg font-semibold">Empowered Women</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-16 bg-light-gray px-4">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl text-black mb-12">Voices of the Road</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://placehold.co/600x400/ec008c/ffffff?text=Blog+Post+1" alt="Blog Post Image" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-semibold text-black mb-2">My First Ride: A Journey to Freedom</h3>
+                            <p class="text-gray-600 text-sm mb-4">By Ayesha Siddiqui | July 20, 2025</p>
+                            <p class="text-gray-700 mb-4">Ayesha shares her inspiring story of overcoming challenges to achieve mobility and independence with WOW.</p>
+                            <a href="#" class="text-wow-pink font-semibold hover:underline">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://placehold.co/600x400/000000/ffffff?text=Blog+Post+2" alt="Blog Post Image" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-semibold text-black mb-2">Safety First: Essential Tips for Female Riders</h3>
+                            <p class="text-gray-600 text-sm mb-4">By WOW Trainers | July 15, 2025</p>
+                            <p class="text-gray-700 mb-4">Our expert trainers provide crucial safety tips for all women on two wheels.</p>
+                            <a href="#" class="text-wow-pink font-semibold hover:underline">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="https://placehold.co/600x400/ec008c/ffffff?text=Blog+Post+3" alt="Blog Post Image" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-xl font-semibold text-black mb-2">Policy Updates: Advocating for Women's Mobility Rights</h3>
+                            <p class="text-gray-600 text-sm mb-4">By Advocacy Team | July 10, 2025</p>
+                            <p class="text-gray-700 mb-4">An update on our efforts to influence policy and create a safer environment for female riders.</p>
+                            <a href="#" class="text-wow-pink font-semibold hover:underline">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-12">
+                    <a href="#" class="bg-wow-pink text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 shadow-lg">Read More Blog Posts</a>
+                    <a href="#contact" class="bg-black text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-wow-pink transition duration-300 shadow-lg">Submit Your Story</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners & Supporters -->
+        <section id="partners" class="py-16 px-4">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl text-black mb-12">Our Valued Partners & Supporters</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
+                    <!-- Partner Logo 1 -->
+                    <img src="https://placehold.co/150x80/000000/ffffff?text=Partner+1" alt="Partner Logo 1" class="mx-auto opacity-75 hover:opacity-100 transition duration-300">
+                    <!-- Partner Logo 2 -->
+                    <img src="https://placehold.co/150x80/000000/ffffff?text=Partner+2" alt="Partner Logo 2" class="mx-auto opacity-75 hover:opacity-100 transition duration-300">
+                    <!-- Partner Logo 3 -->
+                    <img src="https://placehold.co/150x80/000000/ffffff?text=Partner+3" alt="Partner Logo 3" class="mx-auto opacity-75 hover:opacity-100 transition duration-300">
+                    <!-- Partner Logo 4 -->
+                    <img src="https://placehold.co/150x80/000000/ffffff?text=Partner+4" alt="Partner Logo 4" class="mx-auto opacity-75 hover:opacity-100 transition duration-300">
+                    <!-- Partner Logo 5 -->
+                    <img src="https://placehold.co/150x80/000000/ffffff?text=Partner+5" alt="Partner Logo 5" class="mx-auto opacity-75 hover:opacity-100 transition duration-300">
+                    <!-- Add more partner logos as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black text-white py-12 px-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-xl font-semibold text-wow-pink mb-4">Contact Us</h3>
+                <p class="text-gray-400 mb-2">Email: info@wowpakistan.org</p>
+                <p class="text-gray-400 mb-2">Phone: +92 3XX XXXXXXX</p>
+                <p class="text-gray-400">Address: 123 Main Street, Lahore, Pakistan</p>
+            </div>
+            <!-- Social Links -->
+            <div>
+                <h3 class="text-xl font-semibold text-wow-pink mb-4">Follow Us</h3>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-wow-pink transition duration-300">Facebook</a>
+                    <a href="#" class="text-gray-400 hover:text-wow-pink transition duration-300">Twitter</a>
+                    <a href="#" class="text-gray-400 hover:text-wow-pink transition duration-300">Instagram</a>
+                    <a href="#" class="text-gray-400 hover:text-wow-pink transition duration-300">YouTube</a>
+                </div>
+            </div>
+            <!-- Newsletter Signup -->
+            <div>
+                <h3 class="text-xl font-semibold text-wow-pink mb-4">Newsletter</h3>
+                <p class="text-gray-400 mb-4">Stay updated with our latest news and events.</p>
+                <form class="flex flex-col sm:flex-row gap-2">
+                    <input type="email" placeholder="Your Email" class="p-3 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-wow-pink sm:flex-grow">
+                    <button type="submit" class="bg-wow-pink text-white px-6 py-3 rounded-md font-semibold hover:bg-opacity-90 transition duration-300">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500">
+            <p>&copy; 2025 Women on Wheels Pakistan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Carousel functionality for Success Stories
+        const carouselTrack = document.querySelector('.carousel-track');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const itemWidth = carouselItems[0].offsetWidth;
+            carouselTrack.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
+        }
+
+        function moveCarousel(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = carouselItems.length - 1;
+            } else if (currentIndex >= carouselItems.length) {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        }
+
+        // Update carousel on window resize
+        window.addEventListener('resize', updateCarousel);
+        // Initial carousel update
+        window.addEventListener('load', updateCarousel);
+    </script>
+</body>
+</html>
